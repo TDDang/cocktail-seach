@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/TDDang/cocktail-seach/issues"
   },
-  "homepage": "https://github.com/TDDang/cocktail-seach#readme"
+  "homepage": "https://github.com/TDDang/cocktail-seach#readme",
+  "dependencies": {
+    "parcel": "^2.8.3"
+  }
 }
