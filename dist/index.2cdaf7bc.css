@@ -1,0 +1,263 @@
+:root {
+  --dark: #331b4b;
+  --darkLight: #392a47;
+  --light: #fffadf;
+  --grey: #a6a397;
+  color: var(--light);
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+}
+
+html, body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--dark);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.splash-container {
+  width: 350px;
+  height: 350px;
+  background-color: var(--light);
+  color: var(--dark);
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: all .25s;
+  display: flex;
+}
+
+.splash-container h1 {
+  text-align: center;
+  font-family: Lobster, cursive;
+  font-size: 3rem;
+  transition: all .25s;
+}
+
+.splash-container.mini {
+  width: 150px;
+  height: 150px;
+}
+
+.splash-container.mini h1 {
+  font-size: 1.6rem;
+}
+
+.search-bar {
+  max-width: 400px;
+  border: 1px solid var(--light);
+  min-height: 0;
+  border-radius: 5px;
+  align-items: center;
+  margin: 0;
+  transition: all .25s;
+  display: flex;
+  transform: translateX(-100vw);
+}
+
+.search-bar.active {
+  min-height: auto;
+  margin: 2rem;
+  display: flex;
+  transform: translateX(0);
+}
+
+.search-bar input {
+  color: var(--light);
+  background-color: #0000;
+  border: none;
+  outline: none;
+  padding: 1rem .6rem;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  background-color: var(--light);
+  color: var(--dark);
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  padding: .6rem 1.3rem;
+  font-size: 1rem;
+  display: flex;
+}
+
+.cocktail-container {
+  width: 100%;
+  max-width: 2000px;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1rem 0;
+  display: flex;
+}
+
+.cocktail {
+  background-color: var(--darkLight);
+  cursor: pointer;
+  border-radius: 5px;
+  align-items: center;
+  margin: .6rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.cocktail .img-container {
+  width: 230px;
+  height: 230px;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.cocktail .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cocktail .detail {
+  padding: 1rem 2rem;
+}
+
+@keyframes overlayAnimation {
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 100vh;
+  }
+}
+
+@keyframes closeOverlayAnimation {
+  0% {
+    max-height: 100vh;
+  }
+
+  100% {
+    max-height: 0;
+  }
+}
+
+@keyframes leftPanelAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes closeLeftPanelAnimation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  max-height: 0;
+  background-color: #00000080;
+  align-items: stretch;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.overlay.active {
+  animation-name: overlayAnimation;
+  animation-duration: .25s;
+  animation-fill-mode: forwards;
+}
+
+.overlay.disable {
+  max-height: 100vh;
+  animation-name: closeOverlayAnimation;
+  animation-duration: .25s;
+  animation-delay: .25s;
+  animation-fill-mode: forwards;
+}
+
+.overlay .left-panel {
+  background-color: var(--dark);
+  width: 90%;
+  overflow: auto;
+  transform: translateX(-100%);
+}
+
+.overlay.active .left-panel {
+  animation-name: leftPanelAnimation;
+  animation-duration: .25s;
+  animation-delay: .25s;
+  animation-fill-mode: forwards;
+}
+
+.overlay.disable .left-panel {
+  animation-name: closeLeftPanelAnimation;
+  animation-duration: .25s;
+  animation-fill-mode: forwards;
+  transform: translateX(0);
+}
+
+.left-panel .top-bar {
+  cursor: pointer;
+  align-items: center;
+  padding: .6rem;
+  display: flex;
+}
+
+.left-panel .top-bar i {
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+.left-panel .top-bar p {
+  font-weight: bold;
+}
+
+.left-panel .img-container {
+  height: 200px;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.left-panel .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.left-panel h2 {
+  text-align: center;
+  font-family: Lobster, cursive;
+  font-size: 2.4rem;
+}
+
+.left-panel .section {
+  padding-left: .6rem;
+  font-weight: bold;
+}
+
+.left-panel .instructions {
+  padding: .6rem;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */
