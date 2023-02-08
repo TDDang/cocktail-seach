@@ -1,3 +1,3 @@
 # cocktail-seach
 
-un peit texte descriptif
+un petit texte descriptif
